@@ -11,7 +11,7 @@ void ThreadWithTimer::run() {
     int counter = 1;
 
     suspendUntilNextBeat();
-    setPeriodicBeat(1 * SECONDS, 15 * SECONDS);
+    setPeriodicBeat(3 * SECONDS, 20 * SECONDS);
     suspendUntilNextBeat();
     while(true)
     {

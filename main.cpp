@@ -23,9 +23,15 @@
 #include "stm32f4_discovery.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_rcc.h"
+#include "stm32f4xx_usart.h"
 #include "InstantRodos.h"
 #include "IdleTask.h"
 #include "ThreadWithTimer.h"
+
+#include "stm32f4xx.h"
+#include "stm32f4xx_rcc.h"
+#include "stm32f4xx_gpio.h"
+#include "stm32f4xx_usart.h"
 
 
 /** @addtogroup STM32F4_Discovery_Peripheral_Examples
@@ -71,6 +77,49 @@ TIM_Cmd(TIM2, ENABLE);
 
 
 }
+
+
+
+
+void USART_Config(void)
+{
+    // Enable clock for GPIOD
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
+    
+    // Enable clock for USART3
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3, ENABLE);
+
+    // Connect PD8 to USART3_Tx
+    GPIO_PinAFConfig(GPIOD, GPIO_PinSource8, GPIO_AF_USART3);
+    // Connect PD9 to USART3_Rx
+    GPIO_PinAFConfig(GPIOD, GPIO_PinSource9, GPIO_AF_USART3);
+    
+    
+
+    // Initialization of GPIOd	
+    GPIO_InitTypeDef GPIO_InitStruct;
+    GPIO_InitStruct.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9;
+    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF;
+    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+    GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
+    GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+    // Initialization of USART3
+    USART_InitTypeDef USART_InitStruct;
+    USART_InitStruct.USART_BaudRate = 9600;
+    USART_InitStruct.USART_HardwareFlowControl =
+            USART_HardwareFlowControl_None;
+    USART_InitStruct.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+    USART_InitStruct.USART_Parity = USART_Parity_No;
+    USART_InitStruct.USART_StopBits = USART_StopBits_1;
+    USART_InitStruct.USART_WordLength = USART_WordLength_8b;
+    USART_Init(USART3, &USART_InitStruct);
+
+    // Enable USART3
+    USART_Cmd(USART3, ENABLE);
+}
+
 
 
 void doBlinks() 
@@ -119,11 +168,32 @@ void doBlinks()
 }
 
 
+void USART_PutChar(char c)
+{
+    // Wait until transmit data register is empty
+    while (!USART_GetFlagStatus(USART3, USART_FLAG_TXE));
+    // Send a char using USART3
+    USART_SendData(USART3, c);
+}
+
+
+void USART_PutString(char *s)
+{
+    // Send a string
+    while (*s)
+    {
+        USART_PutChar(*s++);
+    }
+}
+
 /**
   * @brief  Main program
   * @param  None
   * @retval None
   */
+  
+extern "C" void mprintf(char *format, ...);
+  
 int main(void)
 {
   /*!< At this stage the microcontroller clock setting is already configured, 
@@ -145,11 +215,18 @@ int main(void)
   GPIO_Init(GPIOD, &GPIO_InitStructure);
 
   configureTheTimer() ;
+  
+   USART_Config();
+  
+  USART_PutChar('M');
+  USART_PutString((char *)"Hello Mike and Faisal");
 
   ThreadWithTimer tw1;
   // ThreadWithTimer tw2;
   IdleTask hw; 
-
+  
+  
+  
   Thread::startThreads();
   while(true) {} 
   return 1;

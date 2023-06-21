@@ -13,10 +13,10 @@ MCFLAGS=-mcpu=cortex-m4 -mthumb -mlittle-endian \
 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb-interwork
 DEFS=-DUSE_STDPERIPH_DRIVER -DSTM32F4XX
 
-STM32_BASE=/home/mike/Desktop/stm32/STM32F4-Discovery_FW_V1.1.0
+STM32_BASE=../STM32F4-Discovery_FW_V1.1.0
 
 INCLUDES=-I. \
--I/home/mike/instant-rodos \
+-I../instant-rodos-demo \
 -I$(STM32_BASE)/Libraries/CMSIS/ST/STM32F4xx/Include \
 -I$(STM32_BASE)/Utilities/STM32F4-Discovery \
 -I$(STM32_BASE)/Libraries/CMSIS/Include \
@@ -34,6 +34,7 @@ $(STM32_BASE)/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c \
 $(STM32_BASE)/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c \
 $(STM32_BASE)/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.c \
 $(STM32_BASE)/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_exti.c \
+$(STM32_BASE)/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c \
 stm32f4xx_tim.c
 ASMSOURCES=$(STM32_BASE)/Libraries/CMSIS/ST/STM32F4xx/Source/Templates/gcc_ride7/startup_stm32f4xx.s
 CPPSOURCES=main.cpp ThreadWithTimer.cpp
