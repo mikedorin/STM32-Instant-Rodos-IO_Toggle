@@ -1,0 +1,55 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AHBPrescTable	system_stm32f4xx.c	/^  __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};$/;"	v
+AR	Makefile	/^AR=arm-none-eabi-ar$/;"	m
+AS	Makefile	/^AS=arm-none-eabi-as$/;"	m
+ASMSOURCES	Makefile	/^ASMSOURCES=..\/..\/..\/Libraries\/CMSIS\/ST\/STM32F4xx\/Source\/Templates\/gcc_ride7\/startup_stm32f4xx.s$/;"	m
+BusFault_Handler	stm32f4xx_it.c	/^void BusFault_Handler(void)$/;"	f
+CC	Makefile	/^CC=arm-none-eabi-gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-c $(MCFLAGS) $(DEFS) $(INCLUDES)$/;"	m
+CP	Makefile	/^CP=arm-none-eabi-objcopy$/;"	m
+DEFS	Makefile	/^DEFS=-DUSE_STDPERIPH_DRIVER -DSTM32F4XX$/;"	m
+DebugMon_Handler	stm32f4xx_it.c	/^void DebugMon_Handler(void)$/;"	f
+Delay	main.c	/^void Delay(__IO uint32_t nCount)$/;"	f
+EXECUTABLE	Makefile	/^EXECUTABLE=iotoggle.elf$/;"	m
+GPIO_InitStructure	main.c	/^GPIO_InitTypeDef  GPIO_InitStructure;$/;"	v
+HSE_VALUE	stm32f4xx_conf.h	28;"	d
+HSE_VALUE	stm32f4xx_conf.h	29;"	d
+HardFault_Handler	stm32f4xx_it.c	/^void HardFault_Handler(void)$/;"	f
+INCLUDES	Makefile	/^INCLUDES=-I. \\$/;"	m
+LD	Makefile	/^LD=arm-none-eabi-ld$/;"	m
+LDFLAGS	Makefile	/^LDFLAGS=-T $(LDSCRIPT) --specs=nosys.specs $(MCFLAGS)$/;"	m
+LDSCRIPT	Makefile	/^LDSCRIPT = TrueSTUDIO\/IO_Toggle\/stm32_flash.ld$/;"	m
+LIBRARY_NAME	Makefile	/^LIBRARY_NAME="instant-rodos.a"$/;"	m
+LIBRARY_PATH	Makefile	/^LIBRARY_PATH="\/home\/mike\/instant-rodos\/"$/;"	m
+MCFLAGS	Makefile	/^MCFLAGS=-mcpu=cortex-m4 -mthumb -mlittle-endian \\$/;"	m
+MemManage_Handler	stm32f4xx_it.c	/^void MemManage_Handler(void)$/;"	f
+NMI_Handler	stm32f4xx_it.c	/^void NMI_Handler(void)$/;"	f
+OBJECTS	Makefile	/^OBJECTS=$(SOURCES:%.c=%.o)$/;"	m
+OD	Makefile	/^OD=arm-none-eabi-objdump$/;"	m
+PLL_M	system_stm32f4xx.c	147;"	d	file:
+PLL_N	system_stm32f4xx.c	148;"	d	file:
+PLL_P	system_stm32f4xx.c	151;"	d	file:
+PLL_Q	system_stm32f4xx.c	154;"	d	file:
+PendSV_Handler	stm32f4xx_it.c	/^void PendSV_Handler(void)$/;"	f
+SOURCES	Makefile	/^SOURCES=main.c stm32f4xx_it.c system_stm32f4xx.c \\$/;"	m
+SVC_Handler	stm32f4xx_it.c	/^void SVC_Handler(void)$/;"	f
+SetSysClock	system_stm32f4xx.c	/^static void SetSysClock(void)$/;"	f	file:
+SysTick_Handler	stm32f4xx_it.c	/^void SysTick_Handler(void)$/;"	f
+SystemCoreClock	system_stm32f4xx.c	/^  uint32_t SystemCoreClock = 168000000;$/;"	v
+SystemCoreClockUpdate	system_stm32f4xx.c	/^void SystemCoreClockUpdate(void)$/;"	f
+SystemInit	system_stm32f4xx.c	/^void SystemInit(void)$/;"	f
+SystemInit_ExtMemCtl	system_stm32f4xx.c	/^void SystemInit_ExtMemCtl(void)$/;"	f
+TARGET	Makefile	/^TARGET=iotoggle.hex$/;"	m
+UsageFault_Handler	stm32f4xx_it.c	/^void UsageFault_Handler(void)$/;"	f
+VECT_TAB_OFFSET	system_stm32f4xx.c	142;"	d	file:
+__STM32F4xx_CONF_H	stm32f4xx_conf.h	24;"	d
+__STM32F4xx_IT_H	stm32f4xx_it.h	24;"	d
+assert_failed	main.c	/^void assert_failed(uint8_t* file, uint32_t line)$/;"	f
+assert_param	stm32f4xx_conf.h	85;"	d
+assert_param	stm32f4xx_conf.h	89;"	d
+main	main.c	/^int main(void)$/;"	f
