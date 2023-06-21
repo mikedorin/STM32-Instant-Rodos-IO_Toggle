@@ -7,23 +7,31 @@
 AHBPrescTable	system_stm32f4xx.c	/^  __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};$/;"	v
 AR	Makefile	/^AR=arm-none-eabi-ar$/;"	m
 AS	Makefile	/^AS=arm-none-eabi-as$/;"	m
-ASMSOURCES	Makefile	/^ASMSOURCES=..\/..\/..\/Libraries\/CMSIS\/ST\/STM32F4xx\/Source\/Templates\/gcc_ride7\/startup_stm32f4xx.s$/;"	m
+ASMSOURCES	Makefile	/^ASMSOURCES=$(STM32_BASE)\/Libraries\/CMSIS\/ST\/STM32F4xx\/Source\/Templates\/gcc_ride7\/startup_stm32f4xx.s$/;"	m
 BusFault_Handler	stm32f4xx_it.c	/^void BusFault_Handler(void)$/;"	f
 CC	Makefile	/^CC=arm-none-eabi-gcc$/;"	m
-CFLAGS	Makefile	/^CFLAGS=-c $(MCFLAGS) $(DEFS) $(INCLUDES)$/;"	m
+CCER_CCE_SET	stm32f4xx_tim.c	132;"	d	file:
+CCER_CCNE_SET	stm32f4xx_tim.c	133;"	d	file:
+CCMR_OC13M_MASK	stm32f4xx_tim.c	134;"	d	file:
+CCMR_OC24M_MASK	stm32f4xx_tim.c	135;"	d	file:
+CCMR_OFFSET	stm32f4xx_tim.c	131;"	d	file:
+CFLAGS	Makefile	/^CFLAGS=-c -g $(MCFLAGS) $(DEFS) $(INCLUDES)$/;"	m
 CP	Makefile	/^CP=arm-none-eabi-objcopy$/;"	m
+CPPSOURCES	Makefile	/^CPPSOURCES=main.cpp ThreadWithTimer.cpp$/;"	m
+CXX	Makefile	/^CXX=arm-none-eabi-g++$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS=-c -g $(MCFLAGS) $(DEFS) $(INCLUDES)$/;"	m
 DEFS	Makefile	/^DEFS=-DUSE_STDPERIPH_DRIVER -DSTM32F4XX$/;"	m
 DebugMon_Handler	stm32f4xx_it.c	/^void DebugMon_Handler(void)$/;"	f
-Delay	main.c	/^void Delay(__IO uint32_t nCount)$/;"	f
+Delay	main.cpp	/^void Delay(__IO uint32_t nCount)$/;"	f
 EXECUTABLE	Makefile	/^EXECUTABLE=iotoggle.elf$/;"	m
-GPIO_InitStructure	main.c	/^GPIO_InitTypeDef  GPIO_InitStructure;$/;"	v
+GPIO_InitStructure	main.cpp	/^GPIO_InitTypeDef  GPIO_InitStructure;$/;"	v
 HSE_VALUE	stm32f4xx_conf.h	28;"	d
 HSE_VALUE	stm32f4xx_conf.h	29;"	d
 HardFault_Handler	stm32f4xx_it.c	/^void HardFault_Handler(void)$/;"	f
 INCLUDES	Makefile	/^INCLUDES=-I. \\$/;"	m
 LD	Makefile	/^LD=arm-none-eabi-ld$/;"	m
 LDFLAGS	Makefile	/^LDFLAGS=-T $(LDSCRIPT) --specs=nosys.specs $(MCFLAGS)$/;"	m
-LDSCRIPT	Makefile	/^LDSCRIPT = TrueSTUDIO\/IO_Toggle\/stm32_flash.ld$/;"	m
+LDSCRIPT	Makefile	/^LDSCRIPT = stm32_flash.ld$/;"	m
 LIBRARY_NAME	Makefile	/^LIBRARY_NAME="instant-rodos.a"$/;"	m
 LIBRARY_PATH	Makefile	/^LIBRARY_PATH="\/home\/mike\/instant-rodos\/"$/;"	m
 MCFLAGS	Makefile	/^MCFLAGS=-mcpu=cortex-m4 -mthumb -mlittle-endian \\$/;"	m
@@ -36,20 +44,120 @@ PLL_N	system_stm32f4xx.c	148;"	d	file:
 PLL_P	system_stm32f4xx.c	151;"	d	file:
 PLL_Q	system_stm32f4xx.c	154;"	d	file:
 PendSV_Handler	stm32f4xx_it.c	/^void PendSV_Handler(void)$/;"	f
-SOURCES	Makefile	/^SOURCES=main.c stm32f4xx_it.c system_stm32f4xx.c \\$/;"	m
+RODOS_KIPU2_THREADWITHTIMER_H	ThreadWithTimer.h	9;"	d
+SMCR_ETR_MASK	stm32f4xx_tim.c	130;"	d	file:
+SOURCES	Makefile	/^SOURCES=stm32f4xx_it.c system_stm32f4xx.c \\$/;"	m
+STM32_BASE	Makefile	/^STM32_BASE=\/home\/mike\/Desktop\/stm32\/STM32F4-Discovery_FW_V1.1.0$/;"	m
 SVC_Handler	stm32f4xx_it.c	/^void SVC_Handler(void)$/;"	f
 SetSysClock	system_stm32f4xx.c	/^static void SetSysClock(void)$/;"	f	file:
+SetupTimer	main.cpp	/^TIM_TimeBaseInitTypeDef    SetupTimer; $/;"	v
 SysTick_Handler	stm32f4xx_it.c	/^void SysTick_Handler(void)$/;"	f
 SystemCoreClock	system_stm32f4xx.c	/^  uint32_t SystemCoreClock = 168000000;$/;"	v
 SystemCoreClockUpdate	system_stm32f4xx.c	/^void SystemCoreClockUpdate(void)$/;"	f
 SystemInit	system_stm32f4xx.c	/^void SystemInit(void)$/;"	f
 SystemInit_ExtMemCtl	system_stm32f4xx.c	/^void SystemInit_ExtMemCtl(void)$/;"	f
 TARGET	Makefile	/^TARGET=iotoggle.hex$/;"	m
+TI1_Config	stm32f4xx_tim.c	/^static void TI1_Config(TIM_TypeDef* TIMx, uint16_t TIM_ICPolarity, uint16_t TIM_ICSelection,$/;"	f	file:
+TI2_Config	stm32f4xx_tim.c	/^static void TI2_Config(TIM_TypeDef* TIMx, uint16_t TIM_ICPolarity, uint16_t TIM_ICSelection,$/;"	f	file:
+TI3_Config	stm32f4xx_tim.c	/^static void TI3_Config(TIM_TypeDef* TIMx, uint16_t TIM_ICPolarity, uint16_t TIM_ICSelection,$/;"	f	file:
+TI4_Config	stm32f4xx_tim.c	/^static void TI4_Config(TIM_TypeDef* TIMx, uint16_t TIM_ICPolarity, uint16_t TIM_ICSelection,$/;"	f	file:
+TIM_ARRPreloadConfig	stm32f4xx_tim.c	/^void TIM_ARRPreloadConfig(TIM_TypeDef* TIMx, FunctionalState NewState)$/;"	f
+TIM_BDTRConfig	stm32f4xx_tim.c	/^void TIM_BDTRConfig(TIM_TypeDef* TIMx, TIM_BDTRInitTypeDef *TIM_BDTRInitStruct)$/;"	f
+TIM_BDTRStructInit	stm32f4xx_tim.c	/^void TIM_BDTRStructInit(TIM_BDTRInitTypeDef* TIM_BDTRInitStruct)$/;"	f
+TIM_CCPreloadControl	stm32f4xx_tim.c	/^void TIM_CCPreloadControl(TIM_TypeDef* TIMx, FunctionalState NewState)$/;"	f
+TIM_CCxCmd	stm32f4xx_tim.c	/^void TIM_CCxCmd(TIM_TypeDef* TIMx, uint16_t TIM_Channel, uint16_t TIM_CCx)$/;"	f
+TIM_CCxNCmd	stm32f4xx_tim.c	/^void TIM_CCxNCmd(TIM_TypeDef* TIMx, uint16_t TIM_Channel, uint16_t TIM_CCxN)$/;"	f
+TIM_ClearFlag	stm32f4xx_tim.c	/^void TIM_ClearFlag(TIM_TypeDef* TIMx, uint16_t TIM_FLAG)$/;"	f
+TIM_ClearITPendingBit	stm32f4xx_tim.c	/^void TIM_ClearITPendingBit(TIM_TypeDef* TIMx, uint16_t TIM_IT)$/;"	f
+TIM_ClearOC1Ref	stm32f4xx_tim.c	/^void TIM_ClearOC1Ref(TIM_TypeDef* TIMx, uint16_t TIM_OCClear)$/;"	f
+TIM_ClearOC2Ref	stm32f4xx_tim.c	/^void TIM_ClearOC2Ref(TIM_TypeDef* TIMx, uint16_t TIM_OCClear)$/;"	f
+TIM_ClearOC3Ref	stm32f4xx_tim.c	/^void TIM_ClearOC3Ref(TIM_TypeDef* TIMx, uint16_t TIM_OCClear)$/;"	f
+TIM_ClearOC4Ref	stm32f4xx_tim.c	/^void TIM_ClearOC4Ref(TIM_TypeDef* TIMx, uint16_t TIM_OCClear)$/;"	f
+TIM_Cmd	stm32f4xx_tim.c	/^void TIM_Cmd(TIM_TypeDef* TIMx, FunctionalState NewState)$/;"	f
+TIM_CounterModeConfig	stm32f4xx_tim.c	/^void TIM_CounterModeConfig(TIM_TypeDef* TIMx, uint16_t TIM_CounterMode)$/;"	f
+TIM_CtrlPWMOutputs	stm32f4xx_tim.c	/^void TIM_CtrlPWMOutputs(TIM_TypeDef* TIMx, FunctionalState NewState)$/;"	f
+TIM_DMACmd	stm32f4xx_tim.c	/^void TIM_DMACmd(TIM_TypeDef* TIMx, uint16_t TIM_DMASource, FunctionalState NewState)$/;"	f
+TIM_DMAConfig	stm32f4xx_tim.c	/^void TIM_DMAConfig(TIM_TypeDef* TIMx, uint16_t TIM_DMABase, uint16_t TIM_DMABurstLength)$/;"	f
+TIM_DeInit	stm32f4xx_tim.c	/^void TIM_DeInit(TIM_TypeDef* TIMx)$/;"	f
+TIM_ETRClockMode1Config	stm32f4xx_tim.c	/^void TIM_ETRClockMode1Config(TIM_TypeDef* TIMx, uint16_t TIM_ExtTRGPrescaler,$/;"	f
+TIM_ETRClockMode2Config	stm32f4xx_tim.c	/^void TIM_ETRClockMode2Config(TIM_TypeDef* TIMx, uint16_t TIM_ExtTRGPrescaler, $/;"	f
+TIM_ETRConfig	stm32f4xx_tim.c	/^void TIM_ETRConfig(TIM_TypeDef* TIMx, uint16_t TIM_ExtTRGPrescaler,$/;"	f
+TIM_EncoderInterfaceConfig	stm32f4xx_tim.c	/^void TIM_EncoderInterfaceConfig(TIM_TypeDef* TIMx, uint16_t TIM_EncoderMode,$/;"	f
+TIM_ForcedOC1Config	stm32f4xx_tim.c	/^void TIM_ForcedOC1Config(TIM_TypeDef* TIMx, uint16_t TIM_ForcedAction)$/;"	f
+TIM_ForcedOC2Config	stm32f4xx_tim.c	/^void TIM_ForcedOC2Config(TIM_TypeDef* TIMx, uint16_t TIM_ForcedAction)$/;"	f
+TIM_ForcedOC3Config	stm32f4xx_tim.c	/^void TIM_ForcedOC3Config(TIM_TypeDef* TIMx, uint16_t TIM_ForcedAction)$/;"	f
+TIM_ForcedOC4Config	stm32f4xx_tim.c	/^void TIM_ForcedOC4Config(TIM_TypeDef* TIMx, uint16_t TIM_ForcedAction)$/;"	f
+TIM_GenerateEvent	stm32f4xx_tim.c	/^void TIM_GenerateEvent(TIM_TypeDef* TIMx, uint16_t TIM_EventSource)$/;"	f
+TIM_GetCapture1	stm32f4xx_tim.c	/^uint32_t TIM_GetCapture1(TIM_TypeDef* TIMx)$/;"	f
+TIM_GetCapture2	stm32f4xx_tim.c	/^uint32_t TIM_GetCapture2(TIM_TypeDef* TIMx)$/;"	f
+TIM_GetCapture3	stm32f4xx_tim.c	/^uint32_t TIM_GetCapture3(TIM_TypeDef* TIMx)$/;"	f
+TIM_GetCapture4	stm32f4xx_tim.c	/^uint32_t TIM_GetCapture4(TIM_TypeDef* TIMx)$/;"	f
+TIM_GetCounter	stm32f4xx_tim.c	/^uint32_t TIM_GetCounter(TIM_TypeDef* TIMx)$/;"	f
+TIM_GetFlagStatus	stm32f4xx_tim.c	/^FlagStatus TIM_GetFlagStatus(TIM_TypeDef* TIMx, uint16_t TIM_FLAG)$/;"	f
+TIM_GetITStatus	stm32f4xx_tim.c	/^ITStatus TIM_GetITStatus(TIM_TypeDef* TIMx, uint16_t TIM_IT)$/;"	f
+TIM_GetPrescaler	stm32f4xx_tim.c	/^uint16_t TIM_GetPrescaler(TIM_TypeDef* TIMx)$/;"	f
+TIM_ICInit	stm32f4xx_tim.c	/^void TIM_ICInit(TIM_TypeDef* TIMx, TIM_ICInitTypeDef* TIM_ICInitStruct)$/;"	f
+TIM_ICStructInit	stm32f4xx_tim.c	/^void TIM_ICStructInit(TIM_ICInitTypeDef* TIM_ICInitStruct)$/;"	f
+TIM_ITConfig	stm32f4xx_tim.c	/^void TIM_ITConfig(TIM_TypeDef* TIMx, uint16_t TIM_IT, FunctionalState NewState)$/;"	f
+TIM_ITRxExternalClockConfig	stm32f4xx_tim.c	/^void TIM_ITRxExternalClockConfig(TIM_TypeDef* TIMx, uint16_t TIM_InputTriggerSource)$/;"	f
+TIM_InternalClockConfig	stm32f4xx_tim.c	/^void TIM_InternalClockConfig(TIM_TypeDef* TIMx)$/;"	f
+TIM_OC1FastConfig	stm32f4xx_tim.c	/^void TIM_OC1FastConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCFast)$/;"	f
+TIM_OC1Init	stm32f4xx_tim.c	/^void TIM_OC1Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)$/;"	f
+TIM_OC1NPolarityConfig	stm32f4xx_tim.c	/^void TIM_OC1NPolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCNPolarity)$/;"	f
+TIM_OC1PolarityConfig	stm32f4xx_tim.c	/^void TIM_OC1PolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPolarity)$/;"	f
+TIM_OC1PreloadConfig	stm32f4xx_tim.c	/^void TIM_OC1PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)$/;"	f
+TIM_OC2FastConfig	stm32f4xx_tim.c	/^void TIM_OC2FastConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCFast)$/;"	f
+TIM_OC2Init	stm32f4xx_tim.c	/^void TIM_OC2Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)$/;"	f
+TIM_OC2NPolarityConfig	stm32f4xx_tim.c	/^void TIM_OC2NPolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCNPolarity)$/;"	f
+TIM_OC2PolarityConfig	stm32f4xx_tim.c	/^void TIM_OC2PolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPolarity)$/;"	f
+TIM_OC2PreloadConfig	stm32f4xx_tim.c	/^void TIM_OC2PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)$/;"	f
+TIM_OC3FastConfig	stm32f4xx_tim.c	/^void TIM_OC3FastConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCFast)$/;"	f
+TIM_OC3Init	stm32f4xx_tim.c	/^void TIM_OC3Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)$/;"	f
+TIM_OC3NPolarityConfig	stm32f4xx_tim.c	/^void TIM_OC3NPolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCNPolarity)$/;"	f
+TIM_OC3PolarityConfig	stm32f4xx_tim.c	/^void TIM_OC3PolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPolarity)$/;"	f
+TIM_OC3PreloadConfig	stm32f4xx_tim.c	/^void TIM_OC3PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)$/;"	f
+TIM_OC4FastConfig	stm32f4xx_tim.c	/^void TIM_OC4FastConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCFast)$/;"	f
+TIM_OC4Init	stm32f4xx_tim.c	/^void TIM_OC4Init(TIM_TypeDef* TIMx, TIM_OCInitTypeDef* TIM_OCInitStruct)$/;"	f
+TIM_OC4PolarityConfig	stm32f4xx_tim.c	/^void TIM_OC4PolarityConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPolarity)$/;"	f
+TIM_OC4PreloadConfig	stm32f4xx_tim.c	/^void TIM_OC4PreloadConfig(TIM_TypeDef* TIMx, uint16_t TIM_OCPreload)$/;"	f
+TIM_OCStructInit	stm32f4xx_tim.c	/^void TIM_OCStructInit(TIM_OCInitTypeDef* TIM_OCInitStruct)$/;"	f
+TIM_PWMIConfig	stm32f4xx_tim.c	/^void TIM_PWMIConfig(TIM_TypeDef* TIMx, TIM_ICInitTypeDef* TIM_ICInitStruct)$/;"	f
+TIM_PrescalerConfig	stm32f4xx_tim.c	/^void TIM_PrescalerConfig(TIM_TypeDef* TIMx, uint16_t Prescaler, uint16_t TIM_PSCReloadMode)$/;"	f
+TIM_RemapConfig	stm32f4xx_tim.c	/^void TIM_RemapConfig(TIM_TypeDef* TIMx, uint16_t TIM_Remap)$/;"	f
+TIM_SelectCCDMA	stm32f4xx_tim.c	/^void TIM_SelectCCDMA(TIM_TypeDef* TIMx, FunctionalState NewState)$/;"	f
+TIM_SelectCOM	stm32f4xx_tim.c	/^void TIM_SelectCOM(TIM_TypeDef* TIMx, FunctionalState NewState)$/;"	f
+TIM_SelectHallSensor	stm32f4xx_tim.c	/^void TIM_SelectHallSensor(TIM_TypeDef* TIMx, FunctionalState NewState)$/;"	f
+TIM_SelectInputTrigger	stm32f4xx_tim.c	/^void TIM_SelectInputTrigger(TIM_TypeDef* TIMx, uint16_t TIM_InputTriggerSource)$/;"	f
+TIM_SelectMasterSlaveMode	stm32f4xx_tim.c	/^void TIM_SelectMasterSlaveMode(TIM_TypeDef* TIMx, uint16_t TIM_MasterSlaveMode)$/;"	f
+TIM_SelectOCxM	stm32f4xx_tim.c	/^void TIM_SelectOCxM(TIM_TypeDef* TIMx, uint16_t TIM_Channel, uint16_t TIM_OCMode)$/;"	f
+TIM_SelectOnePulseMode	stm32f4xx_tim.c	/^void TIM_SelectOnePulseMode(TIM_TypeDef* TIMx, uint16_t TIM_OPMode)$/;"	f
+TIM_SelectOutputTrigger	stm32f4xx_tim.c	/^void TIM_SelectOutputTrigger(TIM_TypeDef* TIMx, uint16_t TIM_TRGOSource)$/;"	f
+TIM_SelectSlaveMode	stm32f4xx_tim.c	/^void TIM_SelectSlaveMode(TIM_TypeDef* TIMx, uint16_t TIM_SlaveMode)$/;"	f
+TIM_SetAutoreload	stm32f4xx_tim.c	/^void TIM_SetAutoreload(TIM_TypeDef* TIMx, uint32_t Autoreload)$/;"	f
+TIM_SetClockDivision	stm32f4xx_tim.c	/^void TIM_SetClockDivision(TIM_TypeDef* TIMx, uint16_t TIM_CKD)$/;"	f
+TIM_SetCompare1	stm32f4xx_tim.c	/^void TIM_SetCompare1(TIM_TypeDef* TIMx, uint32_t Compare1)$/;"	f
+TIM_SetCompare2	stm32f4xx_tim.c	/^void TIM_SetCompare2(TIM_TypeDef* TIMx, uint32_t Compare2)$/;"	f
+TIM_SetCompare3	stm32f4xx_tim.c	/^void TIM_SetCompare3(TIM_TypeDef* TIMx, uint32_t Compare3)$/;"	f
+TIM_SetCompare4	stm32f4xx_tim.c	/^void TIM_SetCompare4(TIM_TypeDef* TIMx, uint32_t Compare4)$/;"	f
+TIM_SetCounter	stm32f4xx_tim.c	/^void TIM_SetCounter(TIM_TypeDef* TIMx, uint32_t Counter)$/;"	f
+TIM_SetIC1Prescaler	stm32f4xx_tim.c	/^void TIM_SetIC1Prescaler(TIM_TypeDef* TIMx, uint16_t TIM_ICPSC)$/;"	f
+TIM_SetIC2Prescaler	stm32f4xx_tim.c	/^void TIM_SetIC2Prescaler(TIM_TypeDef* TIMx, uint16_t TIM_ICPSC)$/;"	f
+TIM_SetIC3Prescaler	stm32f4xx_tim.c	/^void TIM_SetIC3Prescaler(TIM_TypeDef* TIMx, uint16_t TIM_ICPSC)$/;"	f
+TIM_SetIC4Prescaler	stm32f4xx_tim.c	/^void TIM_SetIC4Prescaler(TIM_TypeDef* TIMx, uint16_t TIM_ICPSC)$/;"	f
+TIM_TIxExternalClockConfig	stm32f4xx_tim.c	/^void TIM_TIxExternalClockConfig(TIM_TypeDef* TIMx, uint16_t TIM_TIxExternalCLKSource,$/;"	f
+TIM_TimeBaseInit	stm32f4xx_tim.c	/^void TIM_TimeBaseInit(TIM_TypeDef* TIMx, TIM_TimeBaseInitTypeDef* TIM_TimeBaseInitStruct)$/;"	f
+TIM_TimeBaseStructInit	stm32f4xx_tim.c	/^void TIM_TimeBaseStructInit(TIM_TimeBaseInitTypeDef* TIM_TimeBaseInitStruct)$/;"	f
+TIM_UpdateDisableConfig	stm32f4xx_tim.c	/^void TIM_UpdateDisableConfig(TIM_TypeDef* TIMx, FunctionalState NewState)$/;"	f
+TIM_UpdateRequestConfig	stm32f4xx_tim.c	/^void TIM_UpdateRequestConfig(TIM_TypeDef* TIMx, uint16_t TIM_UpdateSource)$/;"	f
+ThreadWithTimer	ThreadWithTimer.h	/^class ThreadWithTimer:public Thread$/;"	c
 UsageFault_Handler	stm32f4xx_it.c	/^void UsageFault_Handler(void)$/;"	f
 VECT_TAB_OFFSET	system_stm32f4xx.c	142;"	d	file:
 __STM32F4xx_CONF_H	stm32f4xx_conf.h	24;"	d
 __STM32F4xx_IT_H	stm32f4xx_it.h	24;"	d
-assert_failed	main.c	/^void assert_failed(uint8_t* file, uint32_t line)$/;"	f
+assert_failed	main.cpp	/^void assert_failed(uint8_t* file, uint32_t line)$/;"	f
 assert_param	stm32f4xx_conf.h	85;"	d
 assert_param	stm32f4xx_conf.h	89;"	d
-main	main.c	/^int main(void)$/;"	f
+configureTheTimer	main.cpp	/^void configureTheTimer() $/;"	f
+doBlinks	main.cpp	/^void doBlinks() $/;"	f
+main	main.cpp	/^int main(void)$/;"	f
+run	ThreadWithTimer.cpp	/^void ThreadWithTimer::run() {$/;"	f	class:ThreadWithTimer
